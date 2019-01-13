@@ -126,7 +126,7 @@ def write_deposit_slip(row):
 
 # add a dialog if directory doesn't exists to pick one
 today = date.today()
-userpath = path.expanduser('~\Documents\Scans')
+userpath = path.expanduser('~\OneDrive\Documents\Scans')
 scandir = userpath + "\\" + str(today.year) + str(today.month).zfill(2) + str(today.day).zfill(2)
 if path.exists(scandir) == False:
     exit (scandir + " directory doesn't exist !!!!")
