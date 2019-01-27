@@ -47,11 +47,11 @@ def write_title_row(row):
     worksheet.set_column('B:B', 17)
     worksheet.write('C'+str(row), 'Check', cell_format)
     worksheet.set_column('C:C', 17)
-    worksheet.write('D'+str(row), 'General Fund', cell_format)
+    worksheet.write('D'+str(row), '4110 Tithes and Offerings', cell_format)
     worksheet.set_column('D:D', 17)
-    worksheet.write('E'+str(row), 'Building Fund', cell_format)
+    worksheet.write('E'+str(row), '4112 Building Fund', cell_format)
     worksheet.set_column('E:E', 17)
-    worksheet.write('F'+str(row), '??? Fund', cell_format)
+    worksheet.write('F'+str(row), '4108 Youth Camp', cell_format)
     worksheet.set_column('F:F', 17)
     worksheet.write('G'+str(row), '??? Fund', cell_format)
     worksheet.set_column('G:G', 17)
@@ -87,6 +87,9 @@ def write_scanned_image_rows(row):
     center_format.set_align('vcenter')
     center_format.set_font_size(22)
     worksheet.write('A'+str(row), 'Undesignated Cash', center_format)
+    formula = '=B' + str(row) + ' - SUM(E' + str(row) + ':L' + str(row) + ')'
+    worksheet.write_formula('D'+str(row), formula,num_format)
+ 
     worksheet.set_row(row-1,137)
     row += 1
     
