@@ -140,10 +140,6 @@ def write_deposit_slip(row):
     worksheet.write('A'+str(row), 'Paste Deposit Slip Here', center_format)
     worksheet.set_row(row-1,137)
     row += 1
-
-    worksheet.write('A'+str(row), 'Paste Cash Signature Here', center_format)
-    worksheet.set_row(row-1,137)
-    row += 1
     
     return row+1
     
@@ -153,7 +149,7 @@ def write_deposit_slip(row):
 
 # add a dialog if directory doesn't exists to pick one
 today = date.today()
-userpath = path.expanduser('~\OneDrive\Documents\Scans')
+userpath = path.expanduser('~\OneDrive\Documents\Scans\\2019 Receipts')
 #userpath = path.expanduser('~\OneDrive\Scans')
 scandir = userpath + "\\" + str(today.year) + str(today.month).zfill(2) + str(today.day).zfill(2)
 if path.exists(scandir) == False:
